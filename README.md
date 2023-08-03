@@ -9,9 +9,13 @@ This is meant to be a very simple utility for CLI applications relying on UX rat
 ```
 import (
     "github.com/asciifaceman/hobocode"
-
-    func main() {
-            
-    }
 )
+
+func main() {
+    userinput := hobocode.Input("nvim", "What is your preferred editor?")
+
+    hobocode.Notef("You chose: %s", userinput)
+}
 ```
+
+![example](static/hobocode_example.png)
