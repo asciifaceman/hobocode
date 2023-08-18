@@ -18,15 +18,30 @@ import (
 
 // Stdoutln prints with newline to os.Stdout
 func Stdoutln(message string) {
-	fmt.Fprintln(os.Stdout, message)
+	Stdlin(os.Stdout, message)
 }
 
 // Stderrln prints with newline to os.Stderr
 func Stderrln(message string) {
-	fmt.Fprintln(os.Stderr, message)
+	Stdlin(os.Stderr, message)
+}
+
+// Stdout prints without newline to os.Stdout
+func Stdout(message string) {
+	Std(os.Stdout, message)
+}
+
+// Stderr prints without newline to os.Stdout
+func Stderr(message string) {
+	Std(os.Stderr, message)
 }
 
 // Stdlin prints with newline to *os.File the given message
 func Stdlin(fd *os.File, message string) {
 	fmt.Fprintln(fd, message)
+}
+
+// Std prints without newline to *os.FIle
+func Std(fd *os.File, message string) {
+	fmt.Fprint(fd, message)
 }
