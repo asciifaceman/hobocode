@@ -1,6 +1,6 @@
 # Hobocode Examples
 
 ```
-go run prints.go
+go run examples.go
 ```
 
