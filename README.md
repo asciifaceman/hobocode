@@ -5,6 +5,7 @@ applications for human consumption and UX rather than structured outputs.
 
 Uses [go-pretty v6](https://github.com/jedib0t/go-pretty) for colors and Sprinting.
 
+
 ```go
 	hobocode.Header("Hobocode Example")
 	hobocode.Success("Welcome to hobocode")
@@ -14,6 +15,14 @@ Uses [go-pretty v6](https://github.com/jedib0t/go-pretty) for colors and Sprinti
 
 
 The [underlying functions](coloring.go) can be used if you are working with custom *os.File's or you can use the lazy opinionated helpers like 
+
+
+Target output or disable rendering with
+
+```go
+hobocode.SetOutput(nil, nil)
+hobocode.SetOutput(outFile, errFile)
+```
 
 ### Plain
 `hobocode.Warn("Something might be going wrong")`

@@ -11,6 +11,22 @@ var (
 	err = os.Stderr
 )
 
+// SetOutput sets the output for stdout and stderr
+func SetOutput(stdout, stderr *os.File) {
+	if stdout != nil {
+		out = stdout
+	}
+	if stderr != nil {
+		err = stderr
+	}
+}
+
+// ResetOutput resets the output for stdout and stderr to os.Stdout and os.Stderr
+func ResetOutput() {
+	out = os.Stdout
+	err = os.Stderr
+}
+
 /*
 	Stdout helpers
 */
